@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview Coach</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="main-content-area">
+            <!-- Hero Landing Page -->
+            <section id="hero-section" class="active">
+                <div class="glass-card fade-in-up">
+                    <div class="glow-badge">✨ AI-Powered Platform</div>
+                    <h1>AI Interview Coach</h1>
+                    <p class="subtitle">Practice interviews with AI and get instant feedback to land your dream web developer job.</p>
+                    
+                    <div class="setup-container">
+                        <div class="select-group">
+                            <label for="topic-select">Interview Topic</label>
+                            <select id="topic-select" class="glass-select">
+                                <option value="Web Development">Web Development</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="React">React</option>
+                                <option value="HR Questions">HR Questions</option>
+                            </select>
+                        </div>
+                        <div class="select-group">
+                            <label for="level-select">Difficulty Level</label>
+                            <select id="level-select" class="glass-select">
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div class="select-group">
+                            <label for="questions-select">Questions</label>
+                            <select id="questions-select" class="glass-select">
+                                <option value="3">3 Questions</option>
+                                <option value="5">5 Questions</option>
+                                <option value="10">10 Questions</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="main-start-btn" class="glowing-btn">Start Interview 🚀</button>
+                </div>
+            </section>
+
+            <!-- Interview Dashboard -->
+            <section id="interview-section" class="glass-card hidden">
+            
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom:1.5rem; margin-bottom:1.5rem; align-items: center;">
+                <h2>Interview Session</h2>
+                <button id="quit-btn" class="text-btn">Quit Session</button>
+            </div>
+            
+            <div id="qa-area" class="fade-in-up">
+                <div style="position: relative; margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="badge">Question <span id="q-number">1</span>/<span id="q-total">3</span></span>
+                        <span id="timer-badge" class="badge" style="background: rgba(239, 68, 68, 0.2); color: #fca5a5;">⏱️ 30s</span>
+                    </div>
+                    <h3 id="question-text" style="margin-top: 1rem; font-weight: 500; line-height:1.6;">Preparing your AI question...</h3>
+                </div>
+                
+                <div class="answer-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+                        <label for="answer-input" style="margin-bottom: 0;">Your Answer</label>
+                        <button id="voice-btn" class="text-btn" style="font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.05); padding: 0.4rem 0.8rem; border-radius: 2rem;">
+                            🎤 Start Speaking
+                        </button>
+                    </div>
+                    <textarea id="answer-input" rows="7" placeholder="Type your detailed answer or use voice input..."></textarea>
+                </div>
+                
+                <div id="feedback-area" class="hidden">
+                    <h4 id="feedback-score">Score: </h4>
+                    <p id="feedback-text">Feedback text</p>
+                    <button id="next-btn" class="primary-btn">Next Question</button>
+                </div>
+
+                <button id="submit-btn" class="primary-btn" style="margin-top:1.5rem;">Submit Answer</button>
+            </div>
+
+            <!-- Completion area -->
+            <div id="completion-area" class="hidden text-center fade-in-up">
+                <div style="font-size:4rem; margin-bottom:1rem;">🏆</div>
+                <h2>Interview Completed!</h2>
+                <p style="color:var(--text-muted); margin-bottom:2rem;">Great job participating in the mock interview.</p>
+                <button id="restart-btn" class="glowing-btn" style="width:100%; border-radius:0.75rem;">Return Home</button>
+            </div>
+            </section>
+        </div>
+        
+        <div class="avatar-area fade-in">
+            <div class="image-wrapper float-anim">
+                <img src="rohit.png" alt="Rohit Avatar" class="avatar-img" id="user-avatar">
+                <div class="chat-bubble" id="chat-bubble-text">Hi, I'm ready for my interview! 🚀</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
